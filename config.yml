@@ -1,0 +1,33 @@
+# 监控基础配置
+monitor:
+  server_name: "本地测试机（localhost-127.0.0.1）" # 服务器名称，用于告警标题标识              
+  cpu_interval: 30s            # CPU/内存采样间隔
+  cpu_threshold: 90.0          # CPU告警阈值（%）
+  mem_interval : 30s           # 内存采样间隔
+  mem_available_threshold: 2.0 # 可用内存告警阈值（GB）
+  disk_interval: 60s           # 磁盘采样间隔
+  disk_usage_threshold: 85.0   # 磁盘使用率阈值（%）
+  monitor_disks: []            # 监控磁盘分区
+
+# 告警配置
+alert:
+  # 钉钉告警
+  dingtalk:
+    token: ""
+    secret: ""
+  
+  # 邮箱告警
+  email:
+    from: ""           # 发件人邮箱
+    password: ""       # 授权码
+    smtp_host: ""      # SMTP服务器
+    smtp_port: 0       # 端口（465/587）
+    to: []             # 收件人列表
+
+  # 预留短信告警,未实现
+  sms:
+    access_key: ""
+    secret_key: ""
+    sign_name: ""
+    template_id: ""
+    phones: []
